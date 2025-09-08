@@ -158,10 +158,10 @@ from collections import Counter
 frequency = Counter(numbers)
 # frequency = dict(Counter(numbers))
 
-print(frequency)
+# print(frequency)
 
 # 👉 You can still access values like a normal dictionary.
-print(frequency[4])
+# print(frequency[4])
 
 ## Merge 2 dictionaries into one. 
 # dict1 = {"a":1,"b":2}
@@ -169,3 +169,23 @@ print(frequency[4])
 
 # merged_dict = {**dict1,**dict2}
 # print(merged_dict)
+
+
+## Creating a dictionary using keys and values as list
+keys = ["a", "b", "c", "d"]
+values = [1, 2, 3, 4]
+
+result = {}
+
+for index, key in enumerate(keys):
+    result[key] = values[index]
+
+# print(result)
+
+## Creating a dictionary using keys and values as list using dictionary comprehension. 
+result = {key: values[i] for i, key in enumerate(keys)}
+# print(result)
+
+## Creating a dictionary using keys and values as list using zip function. 
+dict_new = dict(zip(keys,values))
+print(dict_new)
