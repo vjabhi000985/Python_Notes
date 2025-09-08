@@ -136,7 +136,7 @@ student = {
 # Practical examples
 ## Use a dictionary to count the frequency of elements in list. 
 
-# numbers = [1,2,2,3,3,3,4,4,4,4,5,5]
+numbers = [1,2,2,3,3,3,4,4,4,4,5,5,4]
 # frequency = {}
 
 # for number in numbers:
@@ -147,9 +147,25 @@ student = {
 
 # print(frequency)
 
-## Merge 2 dictionaries into one. 
-dict1 = {"a":1,"b":2}
-dict2 = {"b":3,"c":4}
+# for number in numbers:
+#   frequency[number] = frequency.get(number, 0) + 1
 
-merged_dict = {**dict1,**dict2}
-print(merged_dict)
+# print(frequency)
+
+## We can achieve this using collections.Counter()
+# 👉 Counter automatically counts how many times each number appears.
+from collections import Counter
+frequency = Counter(numbers)
+# frequency = dict(Counter(numbers))
+
+print(frequency)
+
+# 👉 You can still access values like a normal dictionary.
+print(frequency[4])
+
+## Merge 2 dictionaries into one. 
+# dict1 = {"a":1,"b":2}
+# dict2 = {"b":3,"c":4}
+
+# merged_dict = {**dict1,**dict2}
+# print(merged_dict)
